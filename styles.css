@@ -1,0 +1,224 @@
+/* Variables */
+:root {
+    --primary-bg-colour: #c0c0c0;
+    --secondary-bg-colour: #00447c;
+    --tertiary-bg-colour: #7c3800;
+    --body-font: "Quicksand";
+    --heading-font: "Newsreader";
+    --hero-font: "DM Serif Text";
+
+    /* break point colors */
+    --bp1: whitesmoke;
+    --bp2: grey;
+    --bp3: lightblue;
+}
+
+@keyframes backAnimation {
+    0%{
+        background-color: var(--bp1);
+    }
+    33% {
+        background-color: var(--bp2);
+    }
+    66% {
+        background-color: var(--bp3);
+    }
+    100% {
+        background-color: var(--bp1);
+    }
+}
+
+.bg {
+    animation: backAnimation 9s ease-in-out infinite;
+}
+
+/* Base styles for mobile devices */
+html {
+    background-color: var(--bp3);
+    /* Mobile-friendly styles */
+}
+
+nav div {
+    justify-content: center;
+    list-style: none;
+    display: grid;
+    width: 50%;
+    padding-left: 25%;
+    padding-right: 25%;
+    margin-bottom: 10px;
+    grid-template-columns: auto;
+    transition: grid-template 1s ease-in-out;
+}
+
+nav a {
+    margin-bottom: 7px;
+    font-size: 18px;
+    padding: 6px 12px;
+    text-align: center;
+    border-bottom: 2px outset black;
+    transition: all 0.4s ease-out;
+}
+
+nav a:hover {
+    font-size: 24px;
+    background-color: #668fb0;
+}
+
+#about img {
+    height: 400px;
+    display: block;
+    margin: auto;
+    object-fit: none;
+}
+
+/* skills section in mobile */
+.skills-wrapper {
+    max-width: 50%;
+    justify-self: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+    border: lightgrey 1px inset;
+    transition: all 0.5s ease-in;
+}
+
+.ms {
+    max-width: min-content;
+}
+
+.fa {
+    font-size: 24px;
+    justify-self: center;
+}
+
+/* Media query for tablets and larger screens */
+@media screen and (min-width: 768px) {
+    /* Tablet-specific styles */
+    html {
+        background-color: var(--bp2);
+    }
+
+
+    nav div{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    /* skills section tablet plus */
+    .skills-wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        transition: all 0.5s ease-in;
+    }
+
+    .skills-items {
+        max-width: min-content;
+    }
+}
+
+/* Media query for desktop screens */
+@media screen and (min-width: 1024px) {
+    /* Desktop-specific styles */
+    html {
+        background-color: var(--bp1);
+    }
+
+    .skills-wrapper {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        transition: all 0.5s ease-in;
+    }
+
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--primary-bg-colour);
+    margin: 5vw;
+    text-align: center;
+    font-family: var(--body-font), sans-serif;
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font), serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+p {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+
+/* hero section */
+#about {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: var(--secondary-bg-colour);
+    color: white;
+    font-family: var(--hero-font), sans-serif;
+}
+
+#about a:visited {
+    color: white;
+}
+
+
+#about img {
+    width: 95%;
+}
+
+/* all links */
+a {
+    color: darkcyan;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #668fb0;
+    color: white;
+}
+
+a:visited {
+    color: #c24fc2;
+}
+
+
+a:visited:hover {
+    color: white;
+}
+
+/* remove image link style */
+a img {
+    max-height: 150px;
+    width: fit-content;
+}
+a:hover {
+    cursor: default;
+    background-color: var(--primary-bg-colour);
+    
+}
+
+/* inpage button */
+.btn {
+    font-family: "Quicksand, serif";
+    font-size: 18px;
+    background-color: var(--tertiary-bg-colour);
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 2px 4px;
+}
+
+#footer {
+    padding: 5px
+}
